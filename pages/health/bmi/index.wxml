@@ -1,0 +1,7 @@
+<!--pages/health/bmi/index.wxml-->
+<view>
+  <button bindtap="toBMIPage">骑车</button>
+  <button bindtap="toKaluliiPage">跑步</button>
+  <button bindtap="toBMIPage">游泳</button>
+  <button bindtap="toKaluliiPage">走路</button>
+</view>

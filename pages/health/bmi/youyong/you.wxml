@@ -1,0 +1,20 @@
+<view class="page-section">
+    <view class="weui-cells__title">时间(H)</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput="heightInput" name="height" type="text" auto-focus placeholder="请输入" />
+      </view>
+    </view>
+  </view>
+  
+   <view class="page-section">
+    <view class="weui-cells__title">体重(kg)</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput="weightInput" name="weight" type="text" auto-focus placeholder="请输入" />
+      </view>
+    </view>
+  </view>
+  <view>{{bmi}}</view>
+  <view>{{info}}</view>
+  <button bindtap="bmi" data-type="string">点击</button>

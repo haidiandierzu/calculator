@@ -1,0 +1,127 @@
+<view class="container">
+  <view class="page-section" style="line-height:0.7em;margin-left:15px;margin-top:20px">
+        <text style="font-size:20rpx;color:grey">原神伤害计算器</text>
+    </view>
+    <i-panel title="请选择">
+        <i-row>
+            <i-col span="12">
+                <i-input bind:change="setAttack" maxlength="10" placeholder="面板攻击" title="攻击力" type="digit" value="{{blank}}"></i-input>
+            </i-col>
+            <i-col span="12">
+                <i-input bind:change="setElementalMastery" maxlength="10" placeholder="面板精通" title="元素精通" type="digit" value="{{blank}}"></i-input>
+            </i-col>
+        </i-row>
+        <i-row>
+            <i-col span="12">
+                <view class="row">
+                    <i-input bind:change="setCritRate" maxlength="10" placeholder="" title="暴击率" type="digit" value="{{blank}}"></i-input>
+                    <view class="handred-left">
+                        <text style="font-size:14px;color:grey">%</text>
+                    </view>
+                </view>
+            </i-col>
+            <i-col span="12">
+                <view class="row">
+                    <i-input bind:change="setCritDamage" maxlength="10" placeholder="" title="暴击伤害" type="digit" value="{{blank}}"></i-input>
+                    <view class="handred">
+                        <text style="font-size:14px;color:grey">%</text>
+                    </view>
+                </view>
+            </i-col>
+        </i-row>
+        <view class="row">
+            <view class="row">
+                <i-input bind:change="setDamageRate" maxlength="10" placeholder="" title="技能倍率" type="digit" value="{{damageRate}}"></i-input>
+                <view class="handred-left">
+                    <text style="font-size:14px;color:grey">%</text>
+                </view>
+            </view>
+            <view class="row">
+                <i-input bind:change="setPhysicalAddition" maxlength="10" placeholder="" title="物理|元素增伤" type="digit" value="{{blank}}"></i-input>
+                <view class="handred">
+                    <text style="font-size:14px;color:grey">%</text>
+                </view>
+            </view>
+        </view>
+        <view class="row">
+            <view class="row">
+                <i-input bind:change="setElementalAddition" maxlength="10" placeholder="" title="其他加算增伤" type="digit" value="{{blank}}"></i-input>
+                <view class="handred-left">
+                    <text style="font-size:14px;color:grey">%</text>
+                </view>
+            </view>
+            <view class="row">
+                <i-input bind:change="setOtherAddition" maxlength="10" placeholder="" title="其他乘算增伤" type="digit" value="{{blank}}"></i-input>
+                <view class="handred">
+                    <text style="font-size:14px;color:grey">%</text>
+                </view>
+            </view>
+        </view>
+        <view class="row">
+            <view class="row">
+                <i-input bind:change="setReduceDefense" maxlength="10" placeholder="" title="减防" type="digit" value="{{blank}}"></i-input>
+                <view class="handred-left">
+                    <text style="font-size:14px;color:grey">%</text>
+                </view>
+            </view>
+            <view class="row">
+                <i-input bind:change="setReduceResistance" maxlength="10" placeholder="" title="减抗" type="digit" value="{{blank}}"></i-input>
+                <view class="handred">
+                    <text style="font-size:14px;color:grey">%</text>
+                </view>
+            </view>
+        </view>
+    </i-panel>
+    <i-panel style="padding-top:10px" title="其他指标">
+        <view style="padding:15px;padding-bottom:0px">
+            <i-row>
+                <i-col span="12">
+                    <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+                        <view class="picker">
+                            <text style="font-size:14px;color:grey">伤害类型:{{array[index]}} ></text>
+                        </view>
+                    </picker>
+                </i-col>
+                <i-col span="12">
+                    <picker bindchange="bindPickerChange2" range="{{array2}}" style="margin-left:15px" value="{{index2}}">
+                        <view class="picker">
+                            <text style="font-size:14px;color:grey">怪物类型:{{array2[index2]}} ></text>
+                        </view>
+                    </picker>
+                </i-col>
+            </i-row>
+        </view>
+        <view style="padding:15px">
+            <i-row>
+                <i-col span="12">
+                    <view class="row">
+                        <text style="font-size:13px;color:grey;margin-right:5px">自身
+等级</text>
+                        <i-input-number bindchange="handleLevel" max="100" min="0" value="{{level}}"></i-input-number>
+                    </view>
+                </i-col>
+                <i-col span="12">
+                    <view class="row" style="margin-left:15px">
+                        <text style="font-size:13px;color:grey;margin-right:5px">怪物
+等级</text>
+                        <i-input-number bindchange="handleMonsterLevel" max="100" min="0" value="{{monsterLevel}}"></i-input-number>
+                    </view>
+                </i-col>
+            </i-row>
+        </view>
+    </i-panel>
+    <i-panel style="padding-top:10px" title="计算结果">
+        <i-input disabled iClass="i-input-error" style="color:green" title="伤害期望" value="{{damageCalculate}}"></i-input>
+        <i-input disabled iClass="i-input-error" style="color:green" title="普通伤害" value="{{commonDamageCalculate}}"></i-input>
+        <i-input disabled iClass="i-input-error" style="color:green" title="暴击伤害" value="{{critDamageCalculate}}"></i-input>
+    </i-panel>
+    <view style="height:150rpx"></view>
+    <i-row iClass="btn-area">
+        <i-col span="12">
+            <i-button bind:click="done" type="primary">计算</i-button>
+        </i-col>
+        <i-col span="12">
+            <i-button bind:click="reset" formType="reset">重置</i-button>
+        </i-col>
+    </i-row>
+</view>
