@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/damage/damage",
+    "pages/health/health",
+    "pages/health/kalulii/index",
+    "pages/health/bmi/index",
+    "pages/health/wate/wate",
+    "pages/health/fe/fe",
+    "pages/health/bmr/bmr",
+    "pages/health/bmi/qiche/qi",
+    "pages/health/bmi/run/run",
+    "pages/health/bmi/zoulu/zou",
+    "pages/health/bmi/youyong/you"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "计算器",
+        "iconPath": "/image/2.png",
+        "selectedIconPath": "/image/4.png"
+      },
+      {
+        "pagePath": "pages/damage/damage",
+        "text": "原神伤害计算器",
+        "iconPath": "/image/3.png",
+        "selectedIconPath": "/image/1.png"
+      },
+      {
+        "pagePath": "pages/health/health",
+        "text": "健康管理计算器",
+        "iconPath": "/image/6.jpg",
+        "selectedIconPath": "/image/6.jpg"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFF",
+    "backgroundTextStyle": "light"
+  },
+  "sitemapLocation": "sitemap.json"
+}
