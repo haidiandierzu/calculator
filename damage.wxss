@@ -1,0 +1,22 @@
+.row {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.handred {
+    padding-right: 10px;
+}
+
+.handred,.handred-left {
+    flex-shrink: 0;
+}
+
+.btn-area {
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+}

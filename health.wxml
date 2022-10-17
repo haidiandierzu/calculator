@@ -1,0 +1,9 @@
+<!--pages/health/health.wxml-->
+<view>
+  <button bindtap="toBMIPage">运动卡路里计算器</button>
+  <button bindtap="toKaluliiPage">BMI计算器</button>
+  <button bindtap="towatePage">每日所需水量计算器</button>
+  <button bindtap="tofePage">补铁总剂量计算器</button>
+  <button bindtap="tobmrPage">基础代谢率计算器</button>
+</view>
+
